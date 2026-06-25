@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF6F0;
+  --foreground: #143525;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-primary: #143525;
+  --color-secondary: #F0EDE6;
+  --color-accent: #E5DFD5;
+  --color-highlight: #143525;
+  --color-spiced: #BD6A42;
+  --color-gold: #C6A45C;
+  --color-light-bg: #FAF6F0;
+  --color-dark-text: #143525;
+
+  /* Premium Utilities */
+  --shadow-premium: 0 10px 40px -10px rgba(20, 53, 37, 0.05);
+  --shadow-premium-hover: 0 20px 40px -20px rgba(20, 53, 37, 0.08);
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #FAF6F0;
+    --foreground: #143525;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  overflow-x: clip;
+  max-width: 100%;
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Premium Global Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+  border-left: 1px solid rgba(20, 53, 37, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 53, 37, 0.25);
+  border-radius: 10px;
+  border: 2px solid #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 53, 37, 0.55);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 53, 37, 0.25) #FAF6F0;
+}
+
+/* Hide scrollbar utility class */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Justify all paragraph text on mobile */
+@media (max-width: 767px) {
+  p {
+    text-align: justify !important;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
+/* Falling Pepper Peppercorns Animation */
+@keyframes pepperFall {
+  0% {
+    transform: translateY(0px) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(240px) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-pepper-fall {
+  animation: pepperFall linear infinite;
+}
+
+/* Safe area for mobile bottom nav (iOS home bar) */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
