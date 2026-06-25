@@ -1,23 +1,23 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 export default function LotusAnimation() {
   // Animation variants for drawing the path outlines
-  const pathVariants = {
+  const pathVariants: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: { 
       pathLength: 1, 
       opacity: 1,
       transition: { 
         duration: 2.2, 
-        ease: "easeInOut" 
+        ease: 'easeInOut' as const,
       }
     }
   };
 
   // Animation variants for fading in the petal fills
-  const fillVariants = (delay: number) => ({
+  const fillVariants = (delay: number): Variants => ({
     hidden: { scale: 0, opacity: 0 },
     visible: { 
       scale: 1, 
@@ -25,7 +25,7 @@ export default function LotusAnimation() {
       transition: { 
         delay, 
         duration: 1.2, 
-        ease: "easeOut" 
+        ease: 'easeOut' as const,
       }
     }
   });
