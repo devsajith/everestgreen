@@ -11,15 +11,16 @@ export default function Products() {
 
     interface Product {
         id: number;
-        code: number | null;
         name: string;
-        slug: string;
-        category: string;
-        unit: string;
+        actualPrice: number;
+        offerPrice: number | null;
         image: string;
-        status: number;
-        rate?: number;
-        description?: string;
+        category: string;
+        description: string | null;
+        code?: number | null;
+        slug?: string;
+        unit?: string;
+        status?: number;
     }
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const [formData, setFormData] = useState({ quantity: 1, name: '', phone: '', address: '', pincode: '' });
@@ -29,9 +30,11 @@ export default function Products() {
         if (!selectedProduct) return;
 
         const isSpice = selectedProduct.category === 'spices';
-        const message = isSpice 
-            ? `*Enquiry for the price details*\n\n*Product:* ${selectedProduct.name}\n*Quantity:* ${formData.quantity} ${selectedProduct.unit}\n\n*Customer Details:*\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Address:* ${formData.address}\n*Pincode:* ${formData.pincode}`
-            : `*New Order Inquiry*\n\n*Product:* ${selectedProduct.name}\n*Price:* ₹${selectedProduct.rate || 0} x ${formData.quantity}\n*Total:* ₹${(selectedProduct.rate || 0) * formData.quantity}\n*Quantity:* ${formData.quantity} ${selectedProduct.unit}\n\n*Customer Details:*\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Address:* ${formData.address}\n*Pincode:* ${formData.pincode}`;
+        const activePrice = selectedProduct.offerPrice !== null ? selectedProduct.offerPrice : selectedProduct.actualPrice;
+        const unitStr = selectedProduct.unit ? ` ${selectedProduct.unit}` : '';
+        const message = isSpice
+            ? `*Enquiry for the price details*\n\n*Product:* ${selectedProduct.name}\n*Quantity:* ${formData.quantity}${unitStr}\n\n*Customer Details:*\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Address:* ${formData.address}\n*Pincode:* ${formData.pincode}`
+            : `*New Order Inquiry*\n\n*Product:* ${selectedProduct.name}\n*Price:* ₹${activePrice} x ${formData.quantity}\n*Total:* ₹${activePrice * formData.quantity}\n*Quantity:* ${formData.quantity}${unitStr}\n\n*Customer Details:*\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Address:* ${formData.address}\n*Pincode:* ${formData.pincode}`;
         const encodedMessage = encodeURIComponent(message);
         const whatsappNumber = "919645851927"; // Actual WhatsApp number
 
@@ -39,9 +42,11 @@ export default function Products() {
         setSelectedProduct(null); // Close modal
     }
 
-    const categories = ['All', ...Array.from(new Set(productsData.map(p => p.category)))];
+    const products = productsData as unknown as Product[];
+    const activeProducts = products.filter(product => product.status === 1);
+    const categories = ['All', ...Array.from(new Set(activeProducts.map(p => p.category)))];
 
-    const filteredProducts = productsData.filter(product => {
+    const filteredProducts = activeProducts.filter(product => {
         const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
         return matchesSearch && matchesCategory;
@@ -117,13 +122,47 @@ export default function Products() {
                             </div>
                             
                             {/* Text Info */}
-                            <div className="flex justify-between items-start gap-3 w-full text-left mb-5 px-1">
-                                <h3 className="text-[11px] sm:text-xs font-bold tracking-wide text-[#143525] leading-normal line-clamp-2 max-w-[70%]">
+                            <div className="flex flex-col gap-2 w-full text-left mb-4 px-1">
+                                <h3 className="text-sm sm:text-base font-bold tracking-wide text-[#143525] leading-snug line-clamp-2">
                                     {product.name.toLowerCase().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
                                 </h3>
-                                <span className="text-[#BD6A42] font-bold text-[11px] sm:text-xs shrink-0 whitespace-nowrap mt-0.5">
-                                    {product.category === 'spices' ? 'Market Price' : `₹ ${product.rate ? product.rate.toFixed(0) : '250'}`}
-                                </span>
+                                <div className="flex flex-col gap-0.5">
+                                    {product.category === 'spices' ? (
+                                        <div className="flex flex-col gap-0.5">
+                                            <div className="flex items-baseline gap-1.5">
+                                                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#143525]/50">Rate:</span>
+                                                <span className="text-[#BD6A42] font-extrabold text-sm sm:text-base">
+                                                    Market Price
+                                                </span>
+                                            </div>
+                                            <span className="text-[9px] text-[#BD6A42]/80 font-medium italic mt-0.5">
+                                                *Rate will vary according to the market
+                                            </span>
+                                        </div>
+                                    ) : product.offerPrice !== null ? (
+                                        <>
+                                            <div className="flex items-center gap-1.5">
+                                                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#143525]/50">Offer Price:</span>
+                                                <span className="text-[#BD6A42] font-extrabold text-sm sm:text-base">
+                                                    ₹{product.offerPrice}
+                                                </span>
+                                            </div>
+                                            <div className="flex items-center gap-1.5">
+                                                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#143525]/40">Actual Price:</span>
+                                                <span className="text-[#143525]/40 line-through text-xs font-semibold">
+                                                    ₹{product.actualPrice}
+                                                </span>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <div className="flex items-center gap-1.5">
+                                            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#143525]/50">Actual Price:</span>
+                                            <span className="text-[#BD6A42] font-extrabold text-sm sm:text-base">
+                                                ₹{product.actualPrice}
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                             
                             {/* Button Row */}
@@ -172,13 +211,29 @@ export default function Products() {
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-xs uppercase tracking-wider text-[#143525] leading-tight truncate max-w-[150px]">{selectedProduct.name}</h4>
-                                            <div className="text-[#BD6A42] font-semibold text-xs mt-1">{selectedProduct.category === 'spices' ? 'Market Price' : `₹ ${selectedProduct.rate ? selectedProduct.rate.toFixed(2) : '250.00'}`}</div>
+                                            <div className="text-[#BD6A42] font-semibold text-xs mt-1">
+                                                {selectedProduct.category === 'spices' ? (
+                                                    <div className="flex flex-col gap-0.5">
+                                                        <span className="font-extrabold text-sm">
+                                                            Market Price
+                                                        </span>
+                                                        <span className="text-[9px] text-[#BD6A42]/80 font-medium italic block">*Rate will vary according to the market</span>
+                                                    </div>
+                                                ) : selectedProduct.offerPrice !== null ? (
+                                                    <div className="flex items-center gap-2">
+                                                        <span>₹{selectedProduct.offerPrice.toFixed(2)}</span>
+                                                        <span className="text-[#143525]/40 line-through text-[10px] font-normal">₹{selectedProduct.actualPrice.toFixed(2)}</span>
+                                                    </div>
+                                                ) : (
+                                                    `₹ ${selectedProduct.actualPrice.toFixed(2)}`
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-2 bg-[#FAF6F0] px-2 py-1 rounded-[2px] border border-[#E5DFD5] shadow-sm">
                                         <button type="button" onClick={() => setFormData(prev => ({...prev, quantity: Math.max(1, prev.quantity - 1)}))} className="text-[#143525]/60 hover:text-[#143525] w-6 h-6 flex items-center justify-center text-sm font-bold transition-colors cursor-pointer">−</button>
                                         <span className="text-[#143525] font-bold w-6 text-center text-xs">{formData.quantity}</span>
-                                        <button type="button" onClick={() => setFormData(prev => ({...prev, quantity: prev.quantity + 1}))} className="text-[#143525] hover:text-[#BD6A42] w-6 h-6 flex items-center justify-center text-sm font-bold transition-colors cursor-pointer">+</button>
+                                        <button type="button" onClick={() => setFormData(prev => ({...prev, quantity: formData.quantity + 1}))} className="text-[#143525] hover:text-[#BD6A42] w-6 h-6 flex items-center justify-center text-sm font-bold transition-colors cursor-pointer">+</button>
                                     </div>
                                 </div>
                                 {selectedProduct.description && (
