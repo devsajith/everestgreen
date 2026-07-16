@@ -36,7 +36,7 @@ export default function Products() {
             ? `*Enquiry for the price details*\n\n*Product:* ${selectedProduct.name}\n*Quantity:* ${formData.quantity}${unitStr}\n\n*Customer Details:*\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Address:* ${formData.address}\n*Pincode:* ${formData.pincode}`
             : `*New Order Inquiry*\n\n*Product:* ${selectedProduct.name}\n*Price:* ₹${activePrice} x ${formData.quantity}\n*Total:* ₹${activePrice * formData.quantity}\n*Quantity:* ${formData.quantity}${unitStr}\n\n*Customer Details:*\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Address:* ${formData.address}\n*Pincode:* ${formData.pincode}`;
         const encodedMessage = encodeURIComponent(message);
-        const whatsappNumber = "919645851927"; // Actual WhatsApp number
+        const whatsappNumber = "919961469192"; // Actual WhatsApp number
 
         window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
         setSelectedProduct(null); // Close modal
