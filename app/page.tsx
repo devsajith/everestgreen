@@ -259,7 +259,7 @@ export default function Home() {
         <About />
       </section>
 
-      {/* Nos Engagements (Our Commitments) Section */}
+      {/* Our Commitments Section */}
       <section className="py-10 sm:py-20 bg-[#FAF6F0] border-y border-[#E5DFD5] text-[#143525]">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 text-center">
           <motion.h2 
@@ -269,12 +269,12 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-xs sm:text-[11px] font-bold tracking-[0.3em] uppercase text-[#143525]/60 mb-16"
           >
-            Nos Engagements
+            Our Commitments
           </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-0">
             
-            {/* 1. Naturel */}
+            {/* 1. Natural */}
             <motion.div 
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -289,11 +289,11 @@ export default function Home() {
                 <path d="M35 70 C40 50 50 35 60 40" />
                 <path d="M55 58 C62 48 70 38 80 40" />
               </svg>
-              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Naturel</h4>
-              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Ingrédients d'origine naturelle et ayurvédique</p>
+              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Natural</h4>
+              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Natural and Ayurvedic ingredients</p>
             </motion.div>
 
-            {/* 2. Équilibre */}
+            {/* 2. Balance */}
             <motion.div 
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -307,11 +307,11 @@ export default function Home() {
                 <path d="M38 48 C38 43 62 43 62 48 C62 53 38 53 38 48 Z" />
                 <path d="M44 35 C44 31 56 31 56 35 C56 39 44 39 44 35 Z" />
               </svg>
-              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Équilibre</h4>
-              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Formules qui respectent votre nature profonde</p>
+              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Balance</h4>
+              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Formulas that respect your inner nature</p>
             </motion.div>
 
-            {/* 3. Pureté */}
+            {/* 3. Purity */}
             <motion.div 
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -323,11 +323,11 @@ export default function Home() {
                 <path d="M50 15 C50 15 25 50 25 65 C25 78 36 85 50 85 C64 85 75 78 75 65 C75 50 50 15 50 15 Z" />
                 <path d="M63 55 C65 60 62 67 58 70" strokeWidth="0.6" />
               </svg>
-              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Pureté</h4>
-              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Sans ingrédients controversés</p>
+              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Purity</h4>
+              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Free from controversial ingredients</p>
             </motion.div>
 
-            {/* 4. Éthique */}
+            {/* 4. Ethical */}
             <motion.div 
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -339,11 +339,11 @@ export default function Home() {
                 <path d="M38 75 C30 70 25 55 25 45 C25 40 28 35 30 35 C32 35 34 40 34 45 C35 35 38 30 40 30 C42 30 43 35 43 45 C44 38 47 35 49 35 C51 35 51 40 50 55 C49 65 44 72 38 75 Z" />
                 <path d="M62 75 C70 70 75 55 75 45 C75 40 72 35 70 35 C68 35 66 40 66 45 C65 35 62 30 60 30 C58 30 57 35 57 45 C56 38 53 35 51 35 C49 35 49 40 50 55 C51 65 56 72 62 75 Z" />
               </svg>
-              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Éthique</h4>
-              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Fabrication responsable et éco-consciente</p>
+              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Ethical</h4>
+              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Responsible and eco-conscious manufacturing</p>
             </motion.div>
 
-            {/* 5. Rituel */}
+            {/* 5. Ritual */}
             <motion.div 
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -358,8 +358,8 @@ export default function Home() {
                 <path d="M50 80 C30 80 15 70 25 55 C35 65 48 78 50 80 Z" />
                 <path d="M50 80 C70 80 85 70 75 55 C65 65 52 78 50 80 Z" />
               </svg>
-              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Rituel</h4>
-              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Des gestes simples pour un bien-être durable</p>
+              <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Ritual</h4>
+              <p className="text-[10px] text-[#143525]/75 leading-relaxed max-w-[160px]">Simple gestures for sustainable well-being</p>
             </motion.div>
 
           </div>
