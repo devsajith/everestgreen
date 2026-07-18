@@ -120,7 +120,7 @@ export default function Home() {
                 Discover Products
               </a>
               <a
-                href="https://wa.me/918075859465"
+                href="https://wa.me/919961469192"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 py-3.5 px-4 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-[9px] font-bold tracking-[0.15em] uppercase rounded-xl active:scale-95 transition-all"
@@ -382,11 +382,11 @@ export default function Home() {
         >
           <span className="text-[32px] text-[#BD6A42] font-[family-name:var(--font-playfair)] italic">“</span>
           <p className="text-lg sm:text-xl font-[family-name:var(--font-playfair)] italic text-[#143525] leading-relaxed mb-6">
-            Exceptional products that transformed my daily wellness routine. The herbal oils are deeply nourishing, and the spices have an unmatched freshness that enriches every meal.
+            We visited Everest Green Kerala Ayurveda and Spices and had a great experience. The staff were very knowledgeable and explained the uses and benefits of different spices and Ayurvedic products with great detail. The place was clean and well-organized. We also bought some authentic products. Highly recommend visiting if you want to learn about Kerala’s spices and Ayurveda.
           </p>
           <div className="flex items-center justify-center gap-2">
-            <span className="text-[10px] tracking-widest uppercase font-bold text-[#143525]">Claire M.</span>
-            <span className="text-[9px] text-[#BD6A42] font-semibold uppercase tracking-wider bg-[#F0EDE6] px-2 py-0.5 rounded-[2px]">Verified Customer</span>
+            <span className="text-[10px] tracking-widest uppercase font-bold text-[#143525]">Visitor Review</span>
+            <span className="text-[9px] text-[#BD6A42] font-semibold uppercase tracking-wider bg-[#F0EDE6] px-2 py-0.5 rounded-[2px]">Verified Experience</span>
           </div>
         </motion.div>
       </section>

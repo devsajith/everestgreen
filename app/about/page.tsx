@@ -108,7 +108,7 @@ export default function About() {
                         className="flex items-center gap-6"
                     >
                         <a 
-                            href="https://wa.me/918075859465" 
+                            href="https://wa.me/919961469192" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="inline-block px-8 py-3.5 border border-[#143525] hover:bg-[#143525] hover:text-[#FAF6F0] text-[#143525] text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-[2px]"

@@ -1,8 +1,18 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Contact() {
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+    const handleSend = (e: React.FormEvent) => {
+        e.preventDefault();
+        const text = `*New Contact Message*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Message:* ${formData.message}`;
+        const encodedMessage = encodeURIComponent(text);
+        const whatsappNumber = "919961469192";
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    };
     return (
         <div className="max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 py-10 sm:py-20 text-[#143525] relative z-10 overflow-hidden">
             <motion.div 
@@ -47,8 +57,8 @@ export default function Contact() {
                                     <p className="mt-1 text-[#143525]/80 text-xs leading-relaxed font-normal">
                                         EVEREST GREEN KERALA<br />
                                         Ayurvedic & Spices Garden<br />
-                                        Eruttukanam P.O., Anaviratty,<br />
-                                        Kampiline, Munnar, Kerala - 685561
+                                        12th mile. Valara PO,<br />
+                                        Kerala 685561
                                     </p>
                                 </div>
                             </div>
@@ -59,7 +69,7 @@ export default function Contact() {
                                 </div>
                                 <div className="ml-4">
                                     <h4 className="text-xs font-bold uppercase tracking-wider text-[#143525]">Call Us</h4>
-                                    <p className="mt-1 text-[#143525]/80 text-xs leading-relaxed font-normal">+91 80758 59465</p>
+                                    <p className="mt-1 text-[#143525]/80 text-xs leading-relaxed font-normal">+91 99614 69192</p>
                                 </div>
                             </div>
                         </div>
@@ -90,20 +100,44 @@ export default function Contact() {
                         Send a Message
                     </span>
 
-                    <form className="space-y-5">
+                    <form onSubmit={handleSend} className="space-y-5">
                         <div className="space-y-1">
                             <label htmlFor="name" className="block text-[9px] font-bold text-[#143525]/60 uppercase tracking-widest pl-0.5">Full Name</label>
-                            <input type="text" id="name" className="w-full px-3 py-2.5 bg-[#FAF6F0] border border-[#E5DFD5] rounded-[2px] focus:border-[#143525] outline-none text-[#143525] text-xs placeholder:text-[#143525]/30 transition-all" placeholder="John Doe" />
+                            <input 
+                                type="text" 
+                                id="name" 
+                                required
+                                value={formData.name}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                className="w-full px-3 py-2.5 bg-[#FAF6F0] border border-[#E5DFD5] rounded-[2px] focus:border-[#143525] outline-none text-[#143525] text-xs placeholder:text-[#143525]/30 transition-all" 
+                                placeholder="John Doe" 
+                            />
                         </div>
                         <div className="space-y-1">
                             <label htmlFor="email" className="block text-[9px] font-bold text-[#143525]/60 uppercase tracking-widest pl-0.5">Email Address</label>
-                            <input type="email" id="email" className="w-full px-3 py-2.5 bg-[#FAF6F0] border border-[#E5DFD5] rounded-[2px] focus:border-[#143525] outline-none text-[#143525] text-xs placeholder:text-[#143525]/30 transition-all" placeholder="john@example.com" />
+                            <input 
+                                type="email" 
+                                id="email" 
+                                required
+                                value={formData.email}
+                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                className="w-full px-3 py-2.5 bg-[#FAF6F0] border border-[#E5DFD5] rounded-[2px] focus:border-[#143525] outline-none text-[#143525] text-xs placeholder:text-[#143525]/30 transition-all" 
+                                placeholder="john@example.com" 
+                            />
                         </div>
                         <div className="space-y-1">
                             <label htmlFor="message" className="block text-[9px] font-bold text-[#143525]/60 uppercase tracking-widest pl-0.5">Message</label>
-                            <textarea id="message" rows={4} className="w-full px-3 py-2.5 bg-[#FAF6F0] border border-[#E5DFD5] rounded-[2px] focus:border-[#143525] outline-none text-[#143525] text-xs placeholder:text-[#143525]/30 transition-all resize-none" placeholder="How can we help you?"></textarea>
+                            <textarea 
+                                id="message" 
+                                rows={4} 
+                                required
+                                value={formData.message}
+                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                className="w-full px-3 py-2.5 bg-[#FAF6F0] border border-[#E5DFD5] rounded-[2px] focus:border-[#143525] outline-none text-[#143525] text-xs placeholder:text-[#143525]/30 transition-all resize-none" 
+                                placeholder="How can we help you?"
+                            ></textarea>
                         </div>
-                        <button type="button" className="w-full bg-[#143525] hover:bg-[#1e4835] text-[#FAF6F0] font-bold py-3.5 px-6 rounded-[2px] transition-all duration-300 text-xs uppercase tracking-widest cursor-pointer mt-4">
+                        <button type="submit" className="w-full bg-[#143525] hover:bg-[#1e4835] text-[#FAF6F0] font-bold py-3.5 px-6 rounded-[2px] transition-all duration-300 text-xs uppercase tracking-widest cursor-pointer mt-4">
                             Send Message
                         </button>
                     </form>

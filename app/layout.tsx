@@ -22,8 +22,18 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Everest Green Kerala Ayurvedic & Spices Garden",
-  description: "Premium Kerala Ayurvedic medicines and natural spices",
+  title: "Everest Green Kerala | Ayurvedic & Spices Garden",
+  description: "Experience the purity of ancestral Ayurvedic rituals and organic spices direct from Valara, Kerala. Organic hair oils, copper tools, and fresh spices.",
+  keywords: ["Everest Green", "Ayurvedic Garden Kerala", "Kerala Spices", "Ayurvedic products", "Organic Spices Munnar", "Valara Spices Garden", "Herbal Hair Oil"],
+  authors: [{ name: "Everest Green Kerala" }],
+  openGraph: {
+    title: "Everest Green Kerala | Ayurvedic & Spices Garden",
+    description: "Experience the purity of ancestral Ayurvedic rituals and organic spices direct from Valara, Kerala.",
+    url: "https://everestgreenkerala.com",
+    siteName: "Everest Green Kerala",
+    locale: "en_US",
+    type: "website",
+  },
   verification: {
     google: "-JsLzkIzdFqlo7j59I_Q873kMy0Ug7qxwZIO-BOBrdQ",
   },
@@ -93,8 +103,8 @@ export default function RootLayout({
 
             {/* Footer */}
             <footer className="bg-[#143525] text-[#FAF6F0] border-t border-white/5 mt-auto relative z-20 overflow-hidden">
-              <div className="max-w-7xl mx-auto py-16 px-6 sm:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+              <div className="max-w-7xl mx-auto py-8 sm:py-10 px-6 sm:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
 
                   {/* Brand and Description */}
                   <div className="flex flex-col items-center md:items-start">
@@ -120,20 +130,6 @@ export default function RootLayout({
                     </p>
                   </div>
 
-                  {/* Newsletter form - exactly like the reference image */}
-                  <div>
-                    <h3 className="text-xs font-bold mb-4 tracking-widest uppercase text-white">Join the Ritual</h3>
-                    <p className="text-[#FAF6F0]/70 text-xs leading-relaxed">
-                      Subscribe to receive our latest news, recipes, and exclusive Ayurvedic offers.
-                    </p>
-                    <form className="mt-4 flex flex-col gap-2.5">
-                      <input type="email" required placeholder="Your email address" className="w-full bg-[#1e4835] border border-white/10 rounded-md py-2.5 px-4 text-xs text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none transition-colors" />
-                      <button type="submit" className="w-full bg-[#FAF6F0] hover:bg-white text-[#143525] text-xs font-bold py-2.5 rounded-md tracking-widest uppercase transition-all duration-300 shadow-md">
-                        Subscribe
-                      </button>
-                    </form>
-                  </div>
-
                   {/* Quick Links */}
                   <div>
                     <h3 className="text-xs font-bold mb-4 tracking-widest uppercase text-white">Quick Links</h3>
@@ -151,26 +147,21 @@ export default function RootLayout({
                     <ul className="space-y-3 text-[#FAF6F0]/80 text-xs tracking-wider font-semibold">
                       <li className="flex items-start justify-center md:justify-start gap-3">
                         <span className="mt-0.5">📍</span>
-                        <span className="leading-relaxed">Everest Green Spices Estate,<br/>Munnar, Kerala</span>
+                        <span className="leading-relaxed">Everest Green Spices Estate,<br/>Valara P.O., Kerala</span>
                       </li>
                       <li className="flex items-center justify-center md:justify-start gap-3">
                         <span>📞</span>
-                        <span>+91 80758 59465</span>
+                        <span>+91 99614 69192</span>
                       </li>
                     </ul>
                   </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-[11px] text-[#FAF6F0]/50 tracking-widest uppercase font-semibold">
+                <div className="mt-10 pt-6 border-t border-white/5 text-center text-[11px] text-[#FAF6F0]/50 tracking-widest uppercase font-semibold">
                     <p>
                     &copy; {new Date().getFullYear()} EVEREST GREEN. All rights reserved.
                     </p>
-                    <div className="flex gap-6 flex-wrap justify-center">
-                      <a href="#contact" className="hover:text-white transition-colors">Mentions Légales</a>
-                      <a href="#products" className="hover:text-white transition-colors">CGV</a>
-                      <a href="#about" className="hover:text-white transition-colors">Privacy Policy</a>
-                    </div>
                 </div>
               </div>
             </footer>

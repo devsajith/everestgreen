@@ -128,7 +128,7 @@ export default function NavbarLinks() {
         {/* Drawer footer CTA */}
         <div className="px-6 pb-8 border-t border-[#E5DFD5] pt-5">
           <a
-            href="https://wa.me/918075859465"
+            href="https://wa.me/919961469192"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
