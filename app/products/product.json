@@ -54,7 +54,7 @@
     "name": "Amrutha Thulasi Granules 300g",
     "actualPrice": 799,
     "offerPrice": 760,
-    "image": "/products/medicine/amruthaThulasiGranules300g.webp",
+    "image": "/products/medicine/amruthadiGugguluTablet120Nos.webp",
     "category": "medicine",
     "description": null,
     "status": 1
@@ -64,7 +64,7 @@
     "name": "Amruthadi Guggulu Tablet 120 nos",
     "actualPrice": 1820,
     "offerPrice": 1780,
-    "image": "/products/medicine/amruthadiGugguluTablet120Nos.webp",
+    "image": "/products/medicine/amruthaThulasiGranules300g.webp",
     "category": "medicine",
     "description": null,
     "status": 1
@@ -721,9 +721,9 @@
   },
   {
     "id": 73,
-    "name": "Medhohara Guggulu 60nos",
-    "actualPrice": 1200,
-    "offerPrice": 1100,
+    "name": "Medhohara Guggulu 120nos",
+    "actualPrice": 2400,
+    "offerPrice": 2200,
     "image": "/products/medicine/medhoharaGuggulu180nos.webp",
     "category": "medicine",
     "description": null,
