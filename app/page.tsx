@@ -1,10 +1,20 @@
 'use client';
 
-import About from "./about/page";
-import Products from "./products/page";
-import Contact from "./contact/page";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from 'framer-motion';
+
+const About = dynamic(() => import("./about/page"), {
+  loading: () => <div className="min-h-[200px] flex items-center justify-center text-[#143525]/40 text-[9px] font-bold tracking-[0.2em] uppercase animate-pulse">Loading About Garden...</div>
+});
+
+const Products = dynamic(() => import("./products/page"), {
+  loading: () => <div className="min-h-[400px] flex items-center justify-center text-[#143525]/40 text-[9px] font-bold tracking-[0.2em] uppercase animate-pulse">Loading Collections...</div>
+});
+
+const Contact = dynamic(() => import("./contact/page"), {
+  loading: () => <div className="min-h-[300px] flex items-center justify-center text-[#143525]/40 text-[9px] font-bold tracking-[0.2em] uppercase animate-pulse">Loading Contact Details...</div>
+});
 
 export default function Home() {
   return (

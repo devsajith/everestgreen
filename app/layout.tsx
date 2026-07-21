@@ -9,27 +9,35 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Everest Green Kerala | Ayurvedic & Spices Garden",
-  description: "Experience the purity of ancestral Ayurvedic rituals and organic spices direct from Valara, Kerala. Organic hair oils, copper tools, and fresh spices.",
+  metadataBase: new URL("https://www.everestgreenspices.com/"),
+  title: {
+    default: "Kerala Ayurvedic & Spices Garden",
+    template: "%s | Kerala Ayurvedic & Spices Garden",
+  },
+  description:
+    "Authentic Kerala Ayurvedic Medicines and Premium Spices.",
   keywords: ["Everest Green", "Ayurvedic Garden Kerala", "Kerala Spices", "Ayurvedic products", "Organic Spices Munnar", "Valara Spices Garden", "Herbal Hair Oil"],
   authors: [{ name: "Everest Green Kerala" }],
   openGraph: {
-    title: "Everest Green Kerala | Ayurvedic & Spices Garden",
-    description: "Experience the purity of ancestral Ayurvedic rituals and organic spices direct from Valara, Kerala.",
-    url: "https://everestgreenkerala.com",
+    title: "Kerala Ayurvedic & Spices Garden",
+    description: "Authentic Kerala Ayurvedic Medicines and Premium Spices.",
+    url: "https://www.everestgreenspices.com/",
     siteName: "Everest Green Kerala",
     locale: "en_US",
     type: "website",
@@ -69,6 +77,7 @@ export default function RootLayout({
                     alt="Everest Green Kerala Logo" 
                     width={40} 
                     height={40} 
+                    priority
                     className="rounded-full object-cover border border-[#E5DFD5] shrink-0 w-8 h-8 sm:w-10 sm:h-10" 
                   />
                   <div className="flex flex-col">
