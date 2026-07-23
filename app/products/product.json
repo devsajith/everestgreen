@@ -12,8 +12,8 @@
   {
     "id": 2,
     "name": "Adithyapaka Guggulu 120 Nos",
-    "actualPrice": 1800,
-    "offerPrice": 1680,
+    "actualPrice": 1947,
+    "offerPrice": 1780,
     "image": "/products/medicine/adithyapakaGuggulu120Nos.webp",
     "category": "medicine",
     "description": null,
@@ -362,8 +362,8 @@
   {
     "id": 37,
     "name": "Danvandar Round Pills 120nos",
-    "actualPrice": 1600,
-    "offerPrice": 1480,
+    "actualPrice": 1889,
+    "offerPrice": 1680,
     "image": "/products/medicine/danvandarRoundPills120nos.webp",
     "category": "medicine",
     "description": null,
@@ -1012,8 +1012,8 @@
   {
     "id": 102,
     "name": "Suntyadi 200ml",
-    "actualPrice": 900,
-    "offerPrice": 790,
+    "actualPrice": 1125,
+    "offerPrice": 890,
     "image": "/products/medicine/suntyadi200ml.webp",
     "category": "medicine",
     "description": null,
