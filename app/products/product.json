@@ -152,8 +152,8 @@
   {
     "id": 16,
     "name": "Ayurgreen Aloevera Shampoo 500ml",
-    "actualPrice": 740,
-    "offerPrice": 720,
+    "actualPrice": 900,
+    "offerPrice": 880,
     "image": "/products/medicine/ayurgreenAloeveraShampoo500ml.webp",
     "category": "medicine",
     "description": null,
@@ -302,7 +302,7 @@
   {
     "id": 31,
     "name": "Clove Oil 12ml",
-    "actualPrice": 320,
+    "actualPrice": 360,
     "offerPrice": null,
     "image": "/products/medicine/cloveOil12ml.webp",
     "category": "medicine",
@@ -312,8 +312,8 @@
   {
     "id": 32,
     "name": "Coconut Shampoo 500ml",
-    "actualPrice": 750,
-    "offerPrice": 720,
+    "actualPrice": 950,
+    "offerPrice": 790,
     "image": "/products/medicine/coconutShampoo500ml.webp",
     "category": "medicine",
     "description": null,
@@ -1013,7 +1013,7 @@
     "id": 102,
     "name": "Suntyadi 200ml",
     "actualPrice": 1125,
-    "offerPrice": 890,
+    "offerPrice": 980,
     "image": "/products/medicine/suntyadi200ml.webp",
     "category": "medicine",
     "description": null,
@@ -1190,7 +1190,7 @@
   },
   {
     "id": 221,
-    "name": "CHILLYP POWDER",
+    "name": "CHILLY POWDER",
     "actualPrice": 180,
     "offerPrice": null,
     "image": "/products/spices/chilly.jpg",
@@ -1203,7 +1203,7 @@
   },
   {
     "id": 223,
-    "name": "CINAMON",
+    "name": "CINNAMON",
     "actualPrice": 150,
     "offerPrice": null,
     "image": "/products/spices/cinamon.jpg",
@@ -1268,7 +1268,7 @@
   },
   {
     "id": 228,
-    "name": "FENAL",
+    "name": "FENNAL",
     "actualPrice": 150,
     "offerPrice": null,
     "image": "/products/spices/fenel.jpg",
@@ -1346,7 +1346,7 @@
   },
   {
     "id": 234,
-    "name": "NUT MACE",
+    "name": "NUTMEG",
     "actualPrice": 370,
     "offerPrice": null,
     "image": "/products/spices/nutmace.jpg",
@@ -1437,7 +1437,7 @@
   },
   {
     "id": 241,
-    "name": "STAR",
+    "name": "STAR ANISE",
     "actualPrice": 250,
     "offerPrice": null,
     "image": "/products/spices/star.jpg",
@@ -1502,7 +1502,7 @@
   },
   {
     "id": 127,
-    "name": "ASAFOETADA 100GM",
+    "name": "ASAFOETIDA 100GM",
     "actualPrice": 250,
     "offerPrice": null,
     "image": "/products/spices/asafoetada.jpg",

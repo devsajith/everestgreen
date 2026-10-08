@@ -65,7 +65,7 @@ export default function Products() {
                     Our Collection
                 </span>
                 <h2 className="text-2xl sm:text-4xl md:text-5xl font-[family-name:var(--font-playfair)] text-[#143525] uppercase tracking-wide mb-4">
-                    Our Best Sellers
+                    Our Best Selling Products
                 </h2>
                 <p className="text-xs sm:text-sm text-[#143525]/80 max-w-2xl mx-auto font-normal leading-relaxed">
                     Explore our handpicked selection of 100% natural premium spices and authentic Ayurvedic remedies, freshly sourced from our gardens.
