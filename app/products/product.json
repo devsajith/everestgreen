@@ -902,7 +902,7 @@
   {
     "id": 91,
     "name": "Sandal Face Cream 80g",
-    "actualPrice": 500,
+    "actualPrice": 300,
     "offerPrice": null,
     "image": "/products/medicine/sandalFaceCream80g.webp",
     "category": "medicine",
@@ -912,7 +912,7 @@
   {
     "id": 92,
     "name": "Sandal Face pack 200g",
-    "actualPrice": 300,
+    "actualPrice": 500,
     "offerPrice": null,
     "image": "/products/medicine/sandalFacePack200g.webp",
     "category": "medicine",
@@ -1268,7 +1268,7 @@
   },
   {
     "id": 228,
-    "name": "FENNAL",
+    "name": "FENNEL",
     "actualPrice": 150,
     "offerPrice": null,
     "image": "/products/spices/fenel.jpg",
@@ -1450,7 +1450,7 @@
   },
   {
     "id": 242,
-    "name": "TEA GRANUL",
+    "name": "TEA GRANULES",
     "actualPrice": 300,
     "offerPrice": null,
     "image": "/products/spices/teagranul.jpg",
@@ -1463,7 +1463,7 @@
   },
   {
     "id": 243,
-    "name": "TEA POWDER",
+    "name": "TEA DUST",
     "actualPrice": 180,
     "offerPrice": null,
     "image": "/products/spices/teapowder.jpg",
